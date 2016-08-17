@@ -1,5 +1,5 @@
 # Bachelor Thesis
-This is the source code of my bachelor thesis I wrote for my Computer Science bachelor.
+This is the source code of my bachelor thesis I wrote for my Computer Science Bachelor Degree.
 It could be usefull for others to get a better idea of what a convient structure would be for writing a big paper in LateX.  Some people might wonder why on earth you would use LateX to typeset documents with.
 You should read [this](http://www.andy-roberts.net/writing/latex/benefits) blog post.
 
