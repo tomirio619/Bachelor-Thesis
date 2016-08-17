@@ -1,5 +1,5 @@
 * Create a new folder (e.g. `C:\Latex Fonts`)
-* Download MTPro2 from the website [http://www.pctex.com/mtpro2.html](http://www.pctex.com/mtpro2.html) (file will be called mtp2lite.zip.tpm)
+* Download MTPro2 from the [this](http://www.pctex.com/mtpro2.html) website (file will be called mtp2lite.zip.tpm)
 * Put the file in the created folder (`C:\Latex Fonts`), change the extension to `.zip` and extract
 * Open MiKTeX Settings (Admin)
 * Go to the 'Roots' tab
