@@ -4,7 +4,7 @@ It could be usefull for others to get a better idea of what a convient structure
 You should read [this](http://www.andy-roberts.net/writing/latex/benefits) blog post.
 
  
- ## Notes
+## Notes
 * Make sure to compile with the `-shell-escape` flag for PdfLateX.
 * Make sure you have the custom font MTPro2 installed (see `custom font`folder )
 * Make sure you have installed pygmentize:
