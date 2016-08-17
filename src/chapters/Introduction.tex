@@ -1,0 +1,106 @@
+% !TeX spellcheck = en_US
+% !TeX root = ../BachelorThesis.tex
+\chapter{Introduction}\label{introduction}
+
+\section{Motivation and Research Questions}
+\lettrine[lhang = 0.4, findent=-60pt, lines=7]{\textbf{
+		\initfamily \fontsize{40mm}{40mm} \selectfont M
+		\normalfont}}{ULTIPLE SCLEROSIS (MS)}
+ is a long lasting disease that affects approximately 1 in 1000 people in the Netherlands.
+MS is a disease of the central nervous system, resulting in disrupted communication between the brain and other parts of the body.
+In MS, the insulating covers of nerve cells, called myelin, are damaged.  
+The symptoms range from reduced vision to muscle weakness. 
+Depression is also a common symptom of MS.
+
+There are four different courses for MS \cite{lublin2014defining}.
+The most common course is called relapsing-remitting MS (RRMS).
+RRMS is characterized by attacks, also called relapses, followed by periods of partial or complete recovery (remissions).
+These periods of attacks and recovery can, especially for MS patients with RRMS, result in good and bad days.
+Because there is no cure for MS, treatment tries to prevent and improve the recovering from these attacks.
+
+Orikami is currently developing an app called DiaPro MS. 
+Participants in the pilot experiment of this app will receive activity trackers. 
+MS patients will wear these activity trackers for a period of two months.
+During this period, the activity tracker will capture biomarkers like heart rate, blood pressure, steps walked and the amount of sleep during the day.
+Together with the data gathered from filled in questionnaires, these biomarkers could be used to predict good and bad days for MS patients.
+
+This thesis will focus on how to capture reliable biomarkers using wearables and try to overcome any difficulties faced during the pilot. 
+It will provide more insight in the process of using wearables in research and how the captured data can be used for analysis.
+This is useful when the experiment will be done on a much larger scale. 
+
+The main question of this research is: \textbf{which biomarkers, captured by activity trackers, are possibly useful for the prediction of good and bad days for MS patients? }
+To answer this question, we need to answer the following subquestions:
+%
+\begin{itemize}
+	\item[$\star$] What is the reliability and validity of biomarkers captured by activity trackers?
+	
+	\item[$\star$] How are biomarkers measured?
+	
+	\item[$\star$] How can biomarkers be used as an indicator of health?
+\end{itemize}
+%
+
+\section{Related Work}
+In this section, we will look at literature that is related to making predictions of the quality of upcoming days for people having MS.
+As we have seen in our previous section, MS is a complex disease with several processes playing role in the course of it.
+Biomarkers are used to get a measurement of the current state or condition of a person.
+This is done by measuring indicators.
+Traditionally, biomarkers are substances measured in body fluids, saliva and blood.
+Current research is continuously finding new relevant biomarkers for MS.
+Several papers exist that give an up to date overview of current biomarkers \cite{bielekova2004development, katsavos2013biomarkers}. 
+These biomarkers can be very useful in distinguishing several subgroups of MS.
+New types of biomarkers like stress and neurodegeneration (the loss of neurons) are being explored.
+By exploring these biomarkers, researchers speed up the process of using these biomarkers in clinical practice.
+With the introduction of the activity trackers and smart watches, more biomarkers can be measured easily.
+Although research related to the reliability and validity of the measurements from these devices is still being conducted, the devices are currently being used in the research field.
+
+By using measurements of heart rate, exercise capability (2MWT) and more we could give a patient more insight in his upcoming days.
+Prediction of quality of life in multiple sclerosis has been researched before. 
+Health-related quality of life (HQOL) is used to determine an individual's well-being. 
+This can be affected over time, depending on the disease or other conditions.
+For MS patients, HQOL is poor.
+In \cite{benedict2005predicting}, several predictors (depression and self-reported fatigue) were considered simultaneously.
+In a group of 120 MS patients and in a control group of 44 people, HQOL was measured.
+It was found that MS patients reported lower HQOL compared to the control group.
+Depression and fatigue were the primary contributors to these results.
+This confirms the results of previous studies, where a strong relation was found between depression and HQOL in MS.
+A limitation of self reports is that the results are not objective: they depend on the mood of the patient.
+As we can see in previous studies, the prediction of upcoming days is something that remains unaddressed.
+
+In \cite{galea2013web}, a web-based calculator was made for MS patients.
+This calculator was able to give estimates of the progression of the disease.
+By letting the user provide individual patient characteristics like disease course, number of attacks in the last two years and the age on which the first MS symptoms appeared, the calculator tried to find the best matching patients in a database.
+Using these matched patients, MS related prognoses were calculated for this specific individual having MS. 
+One of these prognoses was the time it would take for the patient to transition from RRMS to secondary progression MS (SPMS).
+These predictions where then compared to the predictions of 17 MS specialist neurologists.
+They were asked how long it would take for the presented MS patients to reach a value of 10 on the expanded disability status scale (EDSS) after their first MS symptoms.
+This means death due to MS.
+The predictive accuracy was measured using the Brier Score, which is a score function that measures the accuracy of probabilistic predictions. 
+A score of 0 indicates perfect accuracy, while 0.5 indicates the same accuracy as chance.
+The Evidence-Based Decision Support Tool in Multiple Sclerosis (EBDiMS) was 100\% consistent.
+Among the neurologists, there was a considerable inter-rate variability.
+Both the specialists and EBDiMS were in the Bier Score range of $0.1-0.2$, which indicates that the predictions are better than chance.
+For particular subgroups, EBDiMS did not do a better job than the specialists.
+The tool used data from a previous conducted longitudinal study.
+Although different biomarkers are commended and the period which will be predicted is longer, this approach shows similarities to what we want to achieve.
+Matching of patients against other patients might be a good idea for disease prediction when looking at longer periods of time, but might not be suitable when predicting over a shorter period (day or week).
+This is because over a shorter period of time, more variables will be influencing these results and patterns for each of the variables differ a lot.
+For this reason we decided to use biomarkers that can easily be measured using activity trackers. 
+By eventually combining these biomarkers, we hope to get more insight in the day quality of MS patients. 
+Before combining biomarkers, we first have to look at each of them individually.
+This gives us a feeling for the gathered data and hopefully new insights in using this data for predicting good and bad days for MS patients.
+
+\section{Outline Thesis}
+In this section, we will describe the outline of the rest of the thesis. 
+In \Cref{chapter: Long Term Effects}, we investigate the long term effects from wearing activity trackers extensively.
+This includes both the health related and the privacy related effects for the participants.
+In \Cref{chapter: Literature Research}, we conduct a literature research on possibly relevant biomarkers for the prediction of good and bad days for MS patients.
+This is done by looking at how each biomarker is related to the health of an individual. 
+We also look at how these biomarkers are currently being measured by activity trackers (if possible).
+This also includes the validity and reliability of the measurements done by these current activity trackers.
+In this same chapter, we also choose three relevant biomarkers that will be used for analysis in \Cref{chapter: Analysis of Selected Biomarkers}.
+
+\Cref{chapter: Description of Experiment} describes how the experiment with the participants was set up, which devices were used in the process and how the data from these device were stored.
+In \Cref{chapter: Analysis of Selected Biomarkers} we describe the analysis we performed on each of the selected biomarkers.
+Finally, \Cref{chapter: Conclusion and Discussion} describes our findings in this thesis.
+We also reflect on everything we have done and what future research should take into account.

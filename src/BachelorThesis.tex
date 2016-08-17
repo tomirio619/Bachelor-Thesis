@@ -1,0 +1,198 @@
+% !TeX spellcheck = en_US
+\documentclass[11pt, a4paper, english, hidelinks, twoside, openright]{report}
+\usepackage{etex}					%Fixes the "no room for \count error", see http://tex.stackexchange.com/questions/186588/what-does-the-etex-package-do-exactly
+\usepackage{babel}
+\usepackage{emptypage}	% All pages with no text (generated in order to have chapters start on odd numbered pages) will be completely empty.
+\usepackage{cite}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage[ddmmyyyy]{datetime}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mathtools}
+\usepackage{amsfonts, amsmath}
+\usepackage{mathptmx}
+\usepackage{caption}
+\usepackage{lettrine}				%For big letters
+\usepackage{enumitem, enumerate}
+\usepackage[all]{xy}
+\usepackage{todonotes}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{bm}
+\usepackage[useregional]{datetime2}
+\usepackage[space]{grffile}
+\usepackage{multicol}
+\usepackage{etoolbox}
+\usepackage{relsize}
+\usepackage{subfig, etoolbox}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage[newfloat]{minted}
+\usepackage{csvsimple}
+\usepackage{fixmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsthm}
+%cleveref must be loaded after hyperref
+\usepackage{cleveref}				
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+
+%Disable pageanchors for the pages before the introduction. It will be turned on before inlcusion of the introduction. It will fix the 'same destination' error, where two pages have the same page number (although some one page number is not shown)
+\hypersetup{pageanchor=false}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and definitions %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+%%%%%%%%%%%%%
+%Custom Font%
+%%%%%%%%%%%%%
+\pdfmapfile{=mtpro2.map}
+\usepackage[lite, subscriptcorrection]{mtpro2}
+
+%%%%%%%%%%%%%%%%%%%%
+%Royal Intials Font%
+%%%%%%%%%%%%%%%%%%%%
+\input RoyalIn.fd
+\newcommand*\initfamily{\usefont{U}{RoyalIn}{xl}{n}}
+
+%%%%%%%%%%%%%
+%Definitions%
+%%%%%%%%%%%%%
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+% Swap the definition of \abs* ,so that \abs
+% resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\makeatother
+
+%%%%%%%%%%
+%Settings%
+%%%%%%%%%%
+\graphicspath{{img/}}
+\captionsetup{hypcap=false}
+%Supress PDF inclusion warnings. If it throws an error, you must upgrade MikTex packages.
+\pdfsuppresswarningpagegroup=1
+\pgfplotsset{compat=1.13}
+
+%http://stackoverflow.com/questions/491904/how-do-i-remove-blank-pages-coming-between-two-chapters-in-appendix
+\let\cleardoublepage\clearpage 	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Minted Source Code Spanning Multiple Pages%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%@see http://tex.stackexchange.com/questions/254044/caption-and-label-on-minted-code
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Listing}
+
+%Otherwise geometry resets everything
+\makeatletter 
+\Gm@restore@org
+\makeatother
+
+\captionsetup[figure]{position=b}
+\captionsetup[subfigure]{position=b}
+\captionsetup[subtable]{position=t}
+
+\setlength{\itemsep}{0cm}
+\setlength{\voffset}{0cm}
+\setlength{\headheight}{0cm}
+\setlength{\topmargin}{0cm}
+%Superscripts in tabular
+\setlength{\extrarowheight}{3pt} 
+\setlength{\arraycolsep}{4pt}
+\lstset{basicstyle = \footnotesize, breaklines = true}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Bibliography in two columns%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\patchcmd{\thebibliography}
+{\list}
+{
+% Add Bibliography as an entry in Table of Contents
+\csname phantomsection\endcsname\addcontentsline{toc}{chapter}{\bibname}	
+\begin{multicols}{2}\smaller\list
+}
+{}
+{}
+\appto{\endthebibliography}{\end{multicols}}
+
+%%%%%%%%%%
+%Commands%
+%%%%%%%%%%
+\newcommand{\source}[1]{\caption*{Source: {#1}} }
+
+%%%%%%%%%%%%%%%%%%%%%%
+%Header custimization%
+%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+% Set both header and footer to nothing
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+%Changes placement of page numbers to: Right on Even pages, Left on Odd pages
+
+\fancyfoot[RE, LO]{\thepage}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Redefinition of \Chapter command%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                    \thispagestyle{fancy}%
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\@chapter\@schapter}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Redefine \cleardoublepage%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Removes the page numbers on empty pages
+\makeatletter
+\renewcommand*{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}%
+\thispagestyle{empty}%
+\newpage%
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Bachelor Thesis Structure%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\input{chapters/"Title Page"}
+\cleardoublepage
+\input{chapters/Abstract}
+\cleardoublepage
+\input{chapters/Acknowledgements}
+
+\microtypesetup{protrusion=false}
+\tableofcontents
+\microtypesetup{protrusion=true}
+\hypersetup{pageanchor=true}
+
+\input{chapters/Introduction}
+\input{chapters/"Long Term Effects"}
+\input{chapters/"Literature Research"}
+\input{chapters/Experiment}
+\input{chapters/Research}
+\input{chapters/Conclusions}
+
+\bibliographystyle{plain}
+\bibliography{chapters/Bibliography}
+
+\input{chapters/Appendix}
+\end{document}

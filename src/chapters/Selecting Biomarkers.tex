@@ -1,0 +1,115 @@
+% !TeX spellcheck = en_US
+% !TeX root = ../BachelorThesis.tex
+
+\section{Selecting Relevant Biomarkers} \label{section:Selecting Relevant Biomarkers}
+As we have seen in \Cref{section:relevant biomarkers}, there is a large collection of biomarkers that could be related to good and bad days. In this section, we will identify which biomarkers could be useful. 
+This will be done by looking at the use of biomarkers in other diseases for longer periods of time. 
+We must also look at current technology being able to measure the biomarker.
+
+\subsection{Limiting the Set of Relevant Biomarkers}
+There are couple of biomarkers for which we decided they could not be used in our research.
+This applies to the following biomarkers: vitamin D, weather, neurogenesis, stress, `sitting, walking and lying pattern' and HRV.
+We do actually see potential for each individual biomarker in future research.
+However, currently those biomarkers are not easy to measure, have not been investigated thoroughly, have not been used in practice or cannot be measured by consumer-available devices.
+All of these reasons made us choose a specific selection of biomarkers.
+Before looking into this selection, we will describe for each of these biomarkers listed above why we decided not use them in our research.
+%
+\begin{itemize}
+	\item For measuring vitamin D, we would need some sort of advanced sensor that could determine the amount of vitamin D in the blood. 
+	Although such devices exist, this would force our participants to manage multiple devices simultaneously. 
+	This would add unnecessary complexity.
+	While writing this thesis, there did not actually exist any consumer-available device that could measure vitamin D (as far as we know).
+	All these reasons made us not to choose this biomarker.
+	
+	\item Neurogenesis is a new research topic that is currently being explored.
+	As we have seen in \Cref{subsection: Neurogenesis}, certain kind of activities and foods are influencing this process.
+	Because the topic is relatively new, there is no data from which we can see how a certain type of food or activity influences neurogenesis. 
+	If this data was present however, this would require more user intervention: users would need to input their meals into the application.
+	This seems undesirable.
+	This observation of unwanted complexity ruled out neurogenesis as a biomarker.
+	
+	\item As seen in \Cref{subsection: Stress}, stress and arousal are partly intertwined. 
+	We have seen that the measurement of sweat on the skin using a dedicated sensor can be used to measure levels of arousal. 
+	Some activity trackers are able to measure this sweat production on the skin, but not all of them. 
+	Because the functionality was not present on all the activity trackers we had available for our experiment, we chose not to include this biomarker.
+	
+	\item Activity classification is something that most activity trackers can do.
+	However, the classification of positions (sitting / walking / lying pattern) is not a basic functionality for currently available activity trackers.
+	Due to this currently lacking feature of activity trackers, we decided not to include this biomarker as well.
+	
+	\item Weather data is freely available, and given that most patients prefer certain temperatures this is a promising biomarker. Due to time restrictions, we decided not to include this biomarker in our research.
+	
+	\item Despite the restricted knowledge on HRV, it appears to be a reliable biomarker for responses to stress. 
+	While acute stress only influences HRV for a short term, chronic stress can even affect HRV during sleep. 
+	This was found in \cite{hall2004acute}. 
+	These stress related changes in HRV caused significant decreases in sleep maintenance, which is the ability to remain at sleep during night.
+	Thus, the effects of some forms of stress on HRV can be seen for an extended period of time. 
+	Despite being a very useful biomarker, HRV cannot be measured using current available smartwatches.
+	It requires advanced technology like ECG to get an accurate approximation of HRV.
+	It is very likely that smartwatches in the future will have the ability to measure this indicator accurately.
+	However, due to the current restriction of technology available for consumers, we will not select this biomarker.
+\end{itemize}
+%
+
+\subsection{Selected Biomarkers}
+Fatigue seems to be one of the most common symptom of MS.
+The results from the \textbf{2MWT} can be used as a reliable and valid measure of the physical function of patients. 
+This is only possible when the test is standardized.
+A problem with the 2MWT is that there is a lack of reference values.
+This limits the interpretation of the results.
+In \cite{selman2014reference}, this limitation was addressed by establishing a reference equation to predict the distance walked in the 2MWT.
+This was done for healthy participants.
+The equation was as follows:
+%
+\begin{align*}
+\text{2MWT}_{\text{predicted}} &= 252.583 - (1.165 \times \text{age}) + (19.987 \times \text{gender}^*) \\
+& \text{gender}^* = 
+\begin{cases*}
+1 & \text{if } \text{male}\\
+0 & \text{if } \text{female}
+\end{cases*}
+\end{align*}
+%
+The equation was found to be highly reproducible in healthy subjects.
+It might be possible to come up with an equation for MS patients that is capable of giving an estimation of the distance walked. 
+This equation could have additional parameters, like the type of MS the patient has and the current severity of the disease.
+
+Standardization of the 2MWT in the pilot is something that requires some more attention.
+Because the lack of a supervisor during this test, people might have different expectations on how to perform the walking test.
+There is documentation available in the `Mijn Kwik' app about the test, but if people put this text in the same perspective as terms of use, it is not likely that this documentation is read thoroughly.
+Despite these uncertainties, the results of these tests seem promising as a potential biomarker.
+For MS, both the 6MWT and the 2MWT \cite{gijbels2010predicting} were tested on relevance of habitual walking performance (HBW).
+Both the 2MWT and 6MWT were the best predictors among all the other tests for habitual walking performance, confirming its high potential.
+
+Your \textbf{resting heart rate} (RHR) (\Cref{section:Resting Heart Rate}) can be influenced by a lot of factors, including stress.
+When being exposed to stress for a long period, your body is constantly functioning in a high gear and therefore affecting your heart rate.
+Stress can also reduce your energy, sleep and make you feel cranky.
+Stress is also playing a big role in MS (\Cref{subsection: Stress}).
+Although the use of resting heart rate from heart rate data from wearables in research is a new concept, it can prove useful.
+Combined with data from the questionnaire app, we can take a closer look at the relation between heart rate and the indicated quality of the next day.
+
+There have been some follow up studies on the effect of elevated resting heart rate on the risk of all-cause mortality.
+In \cite{jensen2013elevated}, this effect was researched on 2798 healthy middle-aged men in a 16-year follow up study.
+An inverse relation was found between resting heart rate (RHR) and physical fitness.
+An increased RHR was also related to mortality, independent of the physical fitness of a person
+
+During \textbf{sleep} (\Cref{section:Sleep}), you lay the foundation for your next day.
+You will immediately notice the impact of lack of sleep from the previous night.
+Sleep also plays an important role in your mood.
+In \cite{totterdell1994associations}, the relations between sleep and mood were investigated.
+It was found that sleep was more related to subsequent well-being than prior well-being.
+Also an earlier onset of sleep was related to a better mood the next day. 
+Earlier onset of sleep was also a better predictor of mood than sleep duration.
+This seems to be in conflict with the general opinion that duration of sleep has the most impact on your mood.
+
+However, in \cite{rehagen2015short} the effect of a short sleep duration on the intake of nutrients and mood was investigated.
+Undergraduate college students were used in this experiment.
+It was found that the total mood disturbance (TMD) score was linked to sleep duration and sleep quality. 
+The Pittsburgh Sleep Quality Index (PSQI) was used to measure the quality and pattern of sleep. 
+It also includes questions to estimate the sleep duration.
+Participants that had a sleep duration of at least 6 hours during the night had lower TDM scores $(p = 0.0091)$ and therefore experienced a more positive mood state the next day.
+This suggests that a short sleep duration and a lower sleep quality have a negative impact on the mood state.
+
+In \cite{wichniak2013sleep}, sleep as a biomarker for depression was investigated.
+Changes in a person's sleep pattern also seem to be important for diagnosing a subtype of depression, regardless of being positive (more sleep or an improvement of sleep quality) or negative (decrease in sleep or worsening of sleep quality).
+Sleep (and specifically sleep duration) can therefore be used as a biomarker to determine the increased risk for depression, which influences the quality of upcoming days.

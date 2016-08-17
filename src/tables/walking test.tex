@@ -1,0 +1,61 @@
+% !TeX spellcheck = en_US
+% !TeX root = ../BachelorThesis.tex
+\begin{table}[H]
+\centering
+\begingroup
+	\fontsize{6pt}{6pt}\selectfont
+	\subfloat[]{
+	\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Distance Walked (m) & \bfseries Rating \\\midrule]
+	{csv/walking/2Dy2uFf3aw6jv9r5u.csv}
+	\label{table:user1}
+	}
+	\hspace{1cm}
+	\subfloat[]{
+	\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Distance Walked (m) & \bfseries Rating \\\midrule]
+	{csv/walking/dW4YzJQEaidmyhsuY.csv}
+	\label{table:user2}
+	}
+	
+	\captionof{table}{Results of the walking tests done by our participants.
+	The distance walked is measured in meters.
+	A value of `-' in the column Distance Walked means that the participant did not perform a walking test that day.
+	A value of `*' means that the quality of the GPS track was insufficient to perform DBSCAN clustering on the corresponding data.}
+	\label{table: Walking Test Analysis}
+	
+\endgroup
+\end{table}
+
+\begin{table}[H]
+\ContinuedFloat
+\centering
+\begingroup
+	\fontsize{6pt}{6pt}\selectfont
+	\captionsetup[subtable]{position=t}
+	\subfloat[]{
+	\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Distance Walked (m) & \bfseries Rating \\\midrule]
+	{csv/walking/gGSWzh5PnqgFdCpq4.csv}
+	\label{table:user3}
+	}
+	\hspace{1cm}
+	\subfloat[]{
+	\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Distance Walked (m) & \bfseries Rating \\\midrule]
+	{csv/walking/oGTtb7DQu4ewMBinx.csv}
+	\label{table:user4}
+	}
+	\captionof{table}{}
+\endgroup
+\end{table}
+%
+\begin{table}[H]
+\ContinuedFloat
+\centering
+\begingroup
+	\fontsize{6pt}{6pt}\selectfont
+	\subfloat[]{
+	\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Distance Walked (m) & \bfseries Rating \\\midrule]
+	{csv/walking/S2usWtx8WXPe8S88r.csv}
+	\label{table:user5}
+	}
+	\captionof{table}{}
+\endgroup
+\end{table}

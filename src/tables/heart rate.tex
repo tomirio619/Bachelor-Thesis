@@ -1,0 +1,45 @@
+% !TeX spellcheck = en_US
+% !TeX root = ../BachelorThesis.tex
+
+\begin{table}[H]
+\centering
+\begingroup
+	\fontsize{6pt}{6pt}\selectfont
+	\subfloat[]{
+	\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Rating & \bm{$\tilde{x}$} &  \bm{$\mu$} & \bm{$\sigma$} 
+	\\\midrule]{csv/heartrates/2Dy2uFf3aw6jv9r5u.csv}
+	\label{table:heartrate1}
+	}
+	\hspace{1cm}
+	\subfloat[]{
+	\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Rating & \bm{$\tilde{x}$} &  \bm{$\mu$} & \bm{$\sigma$} 
+	\\\midrule]{csv/heartrates/dW4YzJQEaidmyhsuY.csv}
+	\label{table:heartrate2}
+	}
+	
+	\captionof{table}{Measurements of the heart rates of our participants. 
+		For each day the median ($\tilde{x}$) and the mean ($\mu$) along with the standard deviation ($\sigma$) are shown.}
+	
+	\label{table: Heartrate Analysis}
+\endgroup
+\end{table}
+
+\begin{table}[H]
+\ContinuedFloat
+\centering
+\begingroup
+	\fontsize{6pt}{6pt}\selectfont
+	\subfloat[]{
+		\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Rating & \bm{$\tilde{x}$} &  \bm{$\mu$} & \bm{$\sigma$} 
+		\\\midrule]{csv/heartrates/gGSWzh5PnqgFdCpq4.csv}
+		\label{table:heartrate3}
+	}
+	\hspace{1cm}
+	\subfloat[]{
+		\csvautobooktabular[head to column names, table head=\toprule \bfseries Date & \bfseries Rating & \bm{$\tilde{x}$} &  \bm{$\mu$} & \bm{$\sigma$} 
+		\\\midrule]{csv/heartrates/S2usWtx8WXPe8S88r.csv}
+		\label{table:heartrate4}
+	}
+	\captionof{table}{}
+\endgroup
+\end{table}

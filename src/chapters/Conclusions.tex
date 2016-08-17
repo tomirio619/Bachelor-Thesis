@@ -1,0 +1,45 @@
+% !TeX spellcheck = en_US
+% !TeX root = ../BachelorThesis.tex
+
+\chapter{Conclusion and Discussion}\label{chapter: Conclusion and Discussion}
+\lettrine[lhang = 0.4, findent=-60pt, lines=7]{\textbf{
+		\initfamily \fontsize{40mm}{40mm} \selectfont I
+		\normalfont}}{n}
+this thesis, we have looked at relevant biomarkers in the prediction of good and bad days for multiple sclerosis (MS) patients. 
+Because activity trackers were used, the validity and reliability was reviewed in \Cref{section: Reliable Data Collection}.
+In this section it was found that activity trackers are widely used in the research field and that the measurement of most of the health related variables are an accurate representation of the true values.
+In \Cref{section:relevant biomarkers}, we have conducted a literature review for relevant biomarkers. 
+This was done by looking at how biomarkers can be measured and how they are currently being used or could be used to get more insight in the health state of (MS) patients.
+In \Cref{section: 2MWT}, two experiments were designed and conducted to test the reliability of GPS coordinates that were used to calculate the distance walked in the 2MWT.
+In both experiments it was found that the quality of the GPS tracks would differ a lot.
+There were tracks that would give a good approximation of the total distance walked but other tracks were of insufficient quality to get a good estimation.
+From the result of the final experiment, it was decided that applying clustering on the GPS points belonging to a GPS track would detect the outliers.
+These outliers are excluded in the algorithm for calculating the total distance walked.
+After reviewing existing usage of biomarkers in \Cref{section:Selecting Relevant Biomarkers}, we chose the following biomarkers for investigating their relation with good and bad day analysis: 2MWT, resting heart rate (RHR) and sleep duration.
+For the results of the 2MWT, the final algorithm which makes use of clustering was used to calculate the distance walked in the analysis of the data from the participants.
+For each individual biomarker, we investigated its relation with the day rating of the next day by using statistical analysis.
+Although we found some relations that confirmed or refuted some of our hypotheses, their was too much diversity to conclude anything.
+The restricted dataset and number of participants contributed to this. 
+We also found that some data seemed to be missing and that participants were forgetting to rate days using the `Mijn Kwik' app.
+Especially data, that required the participant to perform specific tasks in order to become available, was missing.
+To minimize the risk of missing data due to participant in future research, most of the measurement should be done automatically if possible.
+
+Although we focused on a small selection of biomarkers to investigate their potential as a biomarker in the prediction of good and bad days for MS patients, we do not exclude the use of others.
+As an example, another biomarker was `found' during a hackathon.
+In the weekend of 21-22 May 2016, this MS hackathon was organized in Amsterdam, the Netherlands%
+\footnote{\url{http://www.mshackathon.nl}}.
+In this hackathon, a variety of people worked together to gain new insights into MS for researchers, doctors and patients themselves.
+A team from Orikami also participated in this hackathon.
+Currently there is not an objective scale to measure fatigue.
+People that have to indicate themselves how fatigued they are, seem to have problems with this: they are not able to correctly make an estimation of their current fatigue.
+Relatives however are often able to see when people are fatigued, although these people cannot see this by themselves.
+In current literature, the relation between eye movement and fatigue has already been investigated \cite{Arief_2009}.
+Based on these findings, we came up with the idea to measure fatigue based on recordings from the eye.
+By letting the user focus on a screen on which circles appear randomly, we can determine how fast the eye responds on these events.
+Using these measurement, we would like to get an objective measurement of the fatigue level from MS patients.
+The idea was also appreciated by specialists and MS patients and we even managed to win the 2nd place.
+In the future, this new technique should be investigated even more to get a more accurate measurement on fatigue for MS patients.
+
+Because this thesis can be seen as an exploratory study, the lack of any relation between the investigated biomarkers and the day ratings was in line with our expectations.
+In upcoming research, investigating the relation between biomarkers and the quality of upcoming days could be done using more sophisticated methods.
+This should also include analysis in which multiple biomarkers are considered at the same time.
