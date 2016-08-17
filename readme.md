@@ -1,3 +1,10 @@
+# Bachelor Thesis
+This is the source code of my bachelor thesis I wrote for my Computer Science bachelor.
+It could be usefull for others to get a better idea of what a convient structure would be for writing a big paper in LateX.  Some people might wonder why on earth you would use LateX to typeset documents with.
+You should read [this](http://www.andy-roberts.net/writing/latex/benefits) blog post.
+
+ 
+ ## Notes
 * Make sure to compile with the `-shell-escape` flag for PdfLateX.
 * Make sure you have the custom font MTPro2 installed (see `custom font`folder )
 * Make sure you have installed pygmentize:
@@ -13,4 +20,3 @@
 	* The first run, you won't be able to select any package to update.
 	* Just click "next".
 	* After if finishes, rerun the updater. All the packages should be selected when rerun. This will make sure all the packages are updated.
-
