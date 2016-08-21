@@ -1,8 +1,11 @@
 % !TeX spellcheck = en_US
 \documentclass[11pt, a4paper, english, hidelinks, twoside, openright]{report}
-\usepackage{etex}					%Fixes the "no room for \count error", see http://tex.stackexchange.com/questions/186588/what-does-the-etex-package-do-exactly
+%Fixes the "no room for \count error"
+% @see http://tex.stackexchange.com/questions/186588/what-does-the-etex-package-do-exactly
+\usepackage{etex}
 \usepackage{babel}
-\usepackage{emptypage}	% All pages with no text (generated in order to have chapters start on odd numbered pages) will be completely empty.
+% All pages with no text (generated in order to have chapters start on odd numbered pages) will be completely empty.
+\usepackage{emptypage}	
 \usepackage{cite}
 \usepackage{microtype}
 \usepackage[utf8]{inputenc}
@@ -16,7 +19,8 @@
 \usepackage{amsfonts, amsmath}
 \usepackage{mathptmx}
 \usepackage{caption}
-\usepackage{lettrine}				%For big letters
+%For big letters when starting a new chapter
+\usepackage{lettrine}			
 \usepackage{enumitem, enumerate}
 \usepackage[all]{xy}
 \usepackage{todonotes}
@@ -53,21 +57,21 @@
 % New commands and definitions %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-%%%%%%%%%%%%%
-%Custom Font%
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+% Custom Font %
+%%%%%%%%%%%%%%%
 \pdfmapfile{=mtpro2.map}
 \usepackage[lite, subscriptcorrection]{mtpro2}
 
-%%%%%%%%%%%%%%%%%%%%
-%Royal Intials Font%
-%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+% Royal Intials Font %
+%%%%%%%%%%%%%%%%%%%%%%
 \input RoyalIn.fd
 \newcommand*\initfamily{\usefont{U}{RoyalIn}{xl}{n}}
 
-%%%%%%%%%%%%%
-%Definitions%
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+% Definitions %
+%%%%%%%%%%%%%%%
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 % Swap the definition of \abs* ,so that \abs
@@ -78,9 +82,9 @@
 \def\abs{\@ifstar{\oldabs}{\oldabs*}}
 \makeatother
 
-%%%%%%%%%%
-%Settings%
-%%%%%%%%%%
+%%%%%%%%%%%%
+% Settings %
+%%%%%%%%%%%%
 \graphicspath{{img/}}
 \captionsetup{hypcap=false}
 %Supress PDF inclusion warnings. If it throws an error, you must upgrade MikTex packages.
@@ -90,10 +94,11 @@
 %http://stackoverflow.com/questions/491904/how-do-i-remove-blank-pages-coming-between-two-chapters-in-appendix
 \let\cleardoublepage\clearpage 	
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Minted Source Code Spanning Multiple Pages%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%@see http://tex.stackexchange.com/questions/254044/caption-and-label-on-minted-code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Minted Source Code Spanning Multiple Pages %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% @see http://tex.stackexchange.com/questions/254044/caption-and-label-on-minted-code %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=Listing}
 
@@ -115,9 +120,9 @@
 \setlength{\arraycolsep}{4pt}
 \lstset{basicstyle = \footnotesize, breaklines = true}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Bibliography in two columns%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography in two columns %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \patchcmd{\thebibliography}
 {\list}
 {
@@ -129,14 +134,14 @@
 {}
 \appto{\endthebibliography}{\end{multicols}}
 
-%%%%%%%%%%
-%Commands%
-%%%%%%%%%%
+%%%%%%%%%%%%
+% Commands %
+%%%%%%%%%%%%
 \newcommand{\source}[1]{\caption*{Source: {#1}} }
 
-%%%%%%%%%%%%%%%%%%%%%%
-%Header custimization%
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Header custimization %
+%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
 % Set both header and footer to nothing
 \fancyhf{}
@@ -145,9 +150,9 @@
 
 \fancyfoot[RE, LO]{\thepage}	
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Redefinition of \Chapter command%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Redefinition of \Chapter command %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
 \renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
                     \thispagestyle{fancy}%
@@ -156,9 +161,9 @@
                     \secdef\@chapter\@schapter}
 \makeatother
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Redefine \cleardoublepage%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Redefine \cleardoublepage %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Removes the page numbers on empty pages
 \makeatletter
 \renewcommand*{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
@@ -169,9 +174,9 @@
 \makeatother
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Bachelor Thesis Structure%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bachelor Thesis Structure %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \input{chapters/"Title Page"}
 \cleardoublepage
