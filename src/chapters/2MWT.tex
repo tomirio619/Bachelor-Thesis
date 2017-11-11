@@ -45,8 +45,7 @@ The coordinates returned by this Savgol filter where then used used to calculate
 %
 \begin{table}
 	\centering
-	\begingroup
-	\fontsize{10pt}{10pt}\selectfont
+	%
 	\begin{tabular}{@{}lll@{}}
 		\toprule
 		\textbf{Device} & \textbf{OS}  & \textbf{GPS support} \\ \midrule
@@ -54,29 +53,29 @@ The coordinates returned by this Savgol filter where then used used to calculate
 		LG Leon (H320) & 5.0.1 & A-GPS\\
 		Samsung Galaxy S3 Neo GT-I9301I (2) & 4.4.2 & A-GPS, GLONASS\\ \bottomrule
 	\end{tabular}
+	%
 	\captionof{table}{Devices used in the experiment.}
 	\label{2MWT: exp1 specs}
-	\endgroup
 \end{table}
 %
 \begin{table}
 	\centering
-	\begingroup
-		\fontsize{6pt}{7pt}\selectfont
-		\begin{tabular}{@{}llllllllll@{}}
-			\toprule
-			 &  \multicolumn{5}{c}{\textbf{Attempts}}  &  \\ 
-			\cline{2-6}
-			\textbf{Device}&	\textbf{\#1} & \textbf{\#2} & \textbf{\#3} & \textbf{\#4} & \textbf{\#5} & \textbf{Avg. Error} & \bm{$\tilde{x}$} &  \bm{$\mu$} & \bm{$\sigma$} \\
-			\midrule
-			Samsung Galaxy S3 Neo GT-I9301I (1) & 140m & 89m & 104m & 95m & 107m & 13.4\% & 104m & 107m & 17.7m\\
-			LG Leon (H320) & 96m & 100m & 85m & 91m & 33m & 19\% & 91m & 81m & 24.52m \\
-			Samsung Galaxy S3 Neo GT-I9301I (2) & 124m & 127m & 110m & 273m & 155m  & 57.8\% & 127m & 157.8m & 59.42m\\ \bottomrule
-		\end{tabular}
-		\captionof{table}{Calculated distance walking during each of the attemps.
-				For each attempt the median ($\tilde{x}$) and the mean ($\mu$) along with the standard deviation ($\sigma$) are shown.}
-		\label{table:walktestresults}
-	\endgroup
+	%
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{@{}llllllllll@{}}
+		\toprule
+	 &  \multicolumn{5}{c}{\textbf{Attempts}}  &  \\ 
+		\cline{2-6}
+		\textbf{Device}&	\textbf{\#1} & \textbf{\#2} & \textbf{\#3} & \textbf{\#4} & \textbf{\#5} & \textbf{Avg. Error} & \bm{$\tilde{x}$} &  \bm{$\mu$} & \bm{$\sigma$} \\
+		\midrule
+		Samsung Galaxy S3 Neo GT-I9301I (1) & 140m & 89m & 104m & 95m & 107m & 13.4\% & 104m & 107m & 17.7m\\
+		LG Leon (H320) & 96m & 100m & 85m & 91m & 33m & 19\% & 91m & 81m & 24.52m \\
+		Samsung Galaxy S3 Neo GT-I9301I (2) & 124m & 127m & 110m & 273m & 155m  & 57.8\% & 127m & 157.8m & 59.42m\\ \bottomrule
+	\end{tabular}}
+	%
+	\captionof{table}{Calculated distance walking during each of the attemps.
+			For each attempt the median ($\tilde{x}$) and the mean ($\mu$) along with the standard deviation ($\sigma$) are shown.}
+	\label{table:walktestresults}
 \end{table}
 %
 The results of the experiment are shown in \Cref{table:walktestresults}. The specification for each of the phones used in the experiment are shown in \Cref{2MWT: exp1 specs}.
@@ -136,19 +135,19 @@ The results for this experiment can be seen in \Cref{table:walktestresults circu
 %
 \begin{table}
 	\centering
-	\begingroup
-		\fontsize{6pt}{7pt}\selectfont
-		\begin{tabular}{@{}llllllllll@{}}
-			\toprule
-			 &  \multicolumn{5}{c}{\textbf{Attempts}}  &  \\ 
-			\cline{2-6}
-			\textbf{Device}&	\textbf{\#1} & \textbf{\#2} & \textbf{\#3} & \textbf{\#4} & \textbf{\#5} & \textbf{Avg. Error} & \bm{$\tilde{x}$} &  \bm{$\mu$} & \bm{$\sigma$} \\
-			\midrule
-			Samsung Galaxy S3 Neo GT-I9301I & 38m & 41m & 133m & 111m & 112m  & 30.6\% & 111m & 87m  & 39.6m \\ \bottomrule
-		\end{tabular}
-		\captionof{table}{Calculated distance walked during each of the attemps.}
-		\label{table:walktestresults circular}
-	\endgroup
+	%
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{@{}llllllllll@{}}
+		\toprule
+	 &  \multicolumn{5}{c}{\textbf{Attempts}}  &  \\ 
+		\cline{2-6}
+		\textbf{Device}&	\textbf{\#1} & \textbf{\#2} & \textbf{\#3} & \textbf{\#4} & \textbf{\#5} & \textbf{Avg. Error} & \bm{$\tilde{x}$} &  \bm{$\mu$} & \bm{$\sigma$} \\
+		\midrule
+		Samsung Galaxy S3 Neo GT-I9301I & 38m & 41m & 133m & 111m & 112m  & 30.6\% & 111m & 87m  & 39.6m \\ \bottomrule
+	\end{tabular}}
+	%
+	\captionof{table}{Calculated distance walked during each of the attemps.}
+	\label{table:walktestresults circular}
 \end{table}
 %
 If we plot our GPS coordinates (\Cref{fig:walktestresults example}), we notice that the shape of a ellipse/circle is hardly visible.

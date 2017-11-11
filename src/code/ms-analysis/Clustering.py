@@ -1,4 +1,19 @@
-\begin{minted}[linenos=true, fontsize=\footnotesize, breaklines=true]{python}
+from itertools import groupby
+from math import *
+from operator import itemgetter
+
+from sklearn.cluster import dbscan
+
+from BetterPlots import fancyPlot
+from DistanceCalculator import *
+from IO import *
+from Smoothing import *
+
+# Global stuff
+almost_black = "#262626"
+
+
+# http://stackoverflow.com/questions/1185408/converting-from-longitude-latitude-to-cartesian-coordinates
 def clustering(lats, longs, timestamps, ID, timestmp, multiPDF=False):
     """
     Clusters the GPS coordinates using DBSCAN
@@ -87,4 +102,3 @@ def clustering(lats, longs, timestamps, ID, timestmp, multiPDF=False):
     else:
         # DBSCAN gave back an empty array, therefore we cannot perform any smoothing or distance calculation
         return False, 0
-\end{minted}

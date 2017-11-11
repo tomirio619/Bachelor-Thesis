@@ -1,21 +1,21 @@
-\begin{minted}[linenos=true, fontsize=\footnotesize, breaklines=true]{python}
+\begin{minted}[linenos=true, fontsize=\footnotesize, breaklines=true, tabsize=4, obeytabs]{python}
 def filterPositions(positions):
-filteredPositions = []
-threshold = 50
-previousPos = None
-for pos in positions:
-  if pos["accuracy"] <= threshold and not pos["heading"] is None:
-      if previousPos is None:
-          previousPos = pos
-          filteredPositions.append(pos)
-      else:
-          timeDifference = (pos["timestamp"] - previousPos["timestamp"]) / 1000.0
-          previousCoordinate = (previousPos["latitude"], previousPos["longitude"])
-          currentCoordinate = (pos["latitude"], pos["longitude"])
-          distanceWalked = great_circle(previousCoordinate, currentCoordinate).meters
-          meterPerSecond = distanceWalked / timeDifference if timeDifference > 0 else 0
-          if 0 < meterPerSecond <= 3:
-              filteredPositions.append(pos)
-              previousPos = pos
-return filteredPositions
+	filteredPositions = []
+	threshold = 50
+	previousPos = None
+	for pos in positions:
+	  if pos["accuracy"] <= threshold and not pos["heading"] is None:
+	      if previousPos is None:
+	          previousPos = pos
+	          filteredPositions.append(pos)
+	      else:
+	          timeDifference = (pos["timestamp"] - previousPos["timestamp"]) / 1000.0
+	          previousCoordinate = (previousPos["latitude"], previousPos["longitude"])
+	          currentCoordinate = (pos["latitude"], pos["longitude"])
+	          distanceWalked = great_circle(previousCoordinate, currentCoordinate).meters
+	          meterPerSecond = distanceWalked / timeDifference if timeDifference > 0 else 0
+	          if 0 < meterPerSecond <= 3:
+	              filteredPositions.append(pos)
+	              previousPos = pos
+	return filteredPositions
 \end{minted}
