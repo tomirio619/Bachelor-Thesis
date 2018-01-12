@@ -6,7 +6,7 @@ Some people might wonder why on earth you would use LaTeX to typeset documents.
 
 ## Notes
 Some notes on using/compiling the source code:
-* Make sure to compile with the `-shell-escape` flag for PdfLateX.
+* Make sure to compile with the `--shell-escape` flag for PdfLateX.
 * Make sure you have the custom font MTPro2 installed
 	* Create a new folder (e.g. `C:\Latex Fonts`)
 	* Download MTPro2 from the [this](http://www.pctex.com/mtpro2.html) website (file will be called `mtp2lite.zip.tpm`). The file is also included in the `custom font` directory.

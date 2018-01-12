@@ -1,6 +1,6 @@
 % !TeX spellcheck = en_US
 \documentclass[11pt, a4paper, english, hidelinks, twoside, openright]{report}
-%Fixes the "no room for \count error"
+% Fixes the "no room for \count error"
 % @see http://tex.stackexchange.com/questions/186588/what-does-the-etex-package-do-exactly
 \usepackage{etex}
 \usepackage{babel}
@@ -11,15 +11,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{listings}
 \usepackage[margin=1in]{geometry}
 \usepackage[ddmmyyyy]{datetime}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{mathtools}
 \usepackage{amsfonts, amsmath}
 \usepackage{mathptmx}
-\usepackage{caption}
-%For big letters when starting a new chapter
+\usepackage{caption} % For big letters when starting a new chapter
 \usepackage{lettrine}			
 \usepackage{enumitem, enumerate}
 \usepackage[all]{xy}
@@ -45,12 +43,11 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{amsthm}
-%cleveref must be loaded after hyperref
+% cleveref must be loaded after hyperref
 \usepackage{cleveref}				
 \usepackage{fancyhdr}
-\usepackage{pdfpages}
 
-%Disable pageanchors for the pages before the introduction. It will be turned on before inlcusion of the introduction. It will fix the 'same destination' error, where two pages have the same page number (although some one page number is not shown)
+% Disable pageanchors for the pages before the introduction. It will be turned on before inlcusion of the introduction. It will fix the 'same destination' error, where two pages have the same page number (although some one page number is not shown)
 \hypersetup{pageanchor=false}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,16 +120,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography in two columns %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\patchcmd{\thebibliography}
-{\list}
+\patchcmd{\thebibliography}{\list}
 {
 % Add Bibliography as an entry in Table of Contents
 \csname phantomsection\endcsname\addcontentsline{toc}{chapter}{\bibname}	
-\begin{multicols}{2}\smaller\list
+\begin{multicols}{2}\smaller\list}{}{}\appto{\endthebibliography}{\end{multicols}
 }
-{}
-{}
-\appto{\endthebibliography}{\end{multicols}}
 
 %%%%%%%%%%%%
 % Commands %
@@ -146,7 +139,7 @@
 % Set both header and footer to nothing
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-%Changes placement of page numbers to: Right on Even pages, Left on Odd pages
+% Changes placement of page numbers to: Right on Even pages, Left on Odd pages
 
 \fancyfoot[RE, LO]{\thepage}	
 
@@ -164,7 +157,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Redefine \cleardoublepage %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Removes the page numbers on empty pages
+% Removes the page numbers on empty pages
 \makeatletter
 \renewcommand*{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
 \hbox{}%
@@ -178,26 +171,26 @@
 % Bachelor Thesis Structure %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\input{front/"Title Page"}
+\input{front/title_page}
 \cleardoublepage
-\input{chapters/Abstract}
+\input{abstract/abstract}
 \cleardoublepage
-\input{chapters/Acknowledgements}
+\input{ack/acknowledgements}
 
 \microtypesetup{protrusion=false}
 \tableofcontents
 \microtypesetup{protrusion=true}
 \hypersetup{pageanchor=true}
 
-\input{chapters/Introduction}
-\input{chapters/"Long Term Effects"}
-\input{chapters/"Literature Research"}
-\input{chapters/Experiment}
-\input{chapters/Research}
-\input{chapters/Conclusions}
+\input{chapters/introduction}
+\input{chapters/long_term_effects}
+\input{chapters/literature_research}
+\input{chapters/experiment}
+\input{chapters/research}
+\input{chapters/conclusion}
 
 \bibliographystyle{plain}
-\bibliography{bib/Bibliography}
+\bibliography{bib/bibliography}
 
 \input{chapters/Appendix}
 \end{document}
